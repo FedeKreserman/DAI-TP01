@@ -9,8 +9,9 @@ function parsearUrl(laURL)
         console.log("el host es:", laURL.host)
  console.log("el pathName es:", laURL.pathname)
  console.log("los parametros son:",laURL.search)
-
-    }
+  }catch(error){
+    console.error(error)
+  }
  
  
 }    
