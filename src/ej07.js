@@ -1,18 +1,23 @@
-import { getCurrency } from 'currency-map-country';
+import { getCountryByAbbreviation } from 'currency-map-country';
+    import { getCurrencyAbbreviation } from 'currency-map-country';
 
-function obtenerMoneda(codigoPais) {
-    const moneda = getCurrency(codigoPais);
-    console.log(moneda)
-    return moneda ? moneda : null;
+
+function obtenerMoneda(codigoPais){
+
+
+    let moneda = null;
+    if(getCurrencyAbbreviation(getCountryByAbbreviation(codigoPais))!=null){
+        moneda=getCurrencyAbbreviation(getCountryByAbbreviation(codigoPais));
+    }
+    return moneda;
 }
 
+
 let monedaDelPais, codigoPais;
-
-codigoPais = 'ARS';
+codigoPais = 'AR';
 monedaDelPais = obtenerMoneda(codigoPais);
-console.log(monedaDelPais)
 console.log(`La moneda del país ${codigoPais} es: ${monedaDelPais}`);
-
 codigoPais = 'UZA';
 monedaDelPais = obtenerMoneda(codigoPais);
 console.log(`La moneda del país ${codigoPais} es: ${monedaDelPais}`);
+
