@@ -1,4 +1,4 @@
-impor{URL} from 
+import{URL} from 
 let miUrl = null;
 let miObjeto = null;
 miUrl = new URL('http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo');
